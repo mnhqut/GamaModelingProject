@@ -8,7 +8,7 @@
 
 model sheepmovement6
 
-
+//Pause the experiement when adding obstacles to prevent bugs
 global {
 	float step <- 1#s;
 
@@ -407,7 +407,7 @@ species sheep skills: [pedestrian]{
 			}
 		}
 		
-		if flip(0.8){
+		if flip(0.001){
 			tendency_right_up <- not tendency_right_up;
 		}
 					
@@ -439,7 +439,7 @@ species sheep skills: [pedestrian]{
 
 
 experiment normal_sim type: gui {
-	
+	//Pause the experiement when adding obstacles to prevent bugs
 	
 	parameter "display_free_space" var:display_free_space;
 	parameter "display_force" var:display_force;
@@ -489,7 +489,7 @@ experiment normal_sim type: gui {
 //			camera #from_above locked:true;
 			event 'a' {ask simulation {do clicka;}}  // click a to control 1 dog
 			event 's' {ask simulation {do clicks;}}  // click s to control the other dog
-			
+			//Pause the experiement when adding obstacles to prevent bugs
 			event 'w' {ask simulation {do make_obstacle;}}   // click w to make obstacles
 			event 'e' {ask simulation {do delete_obstacle;}}  // click e to delete an obstacle
 			
